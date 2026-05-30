@@ -59,7 +59,7 @@
       display: flex; flex-direction: column; align-items: center;
     }
 
-    /* Avatar */
+
     .avatar-wrap { position: relative; margin-bottom: 24px; }
     .avatar {
       width: 88px; height: 88px; border-radius: 50%;
@@ -86,21 +86,19 @@
       font-family: 'Syne', sans-serif; font-size: 26px;
       font-weight: 800; letter-spacing: -0.5px; text-align: center;
     }
-    .handle { font-size: 14px; color: var(--muted); margin-top: 4px; margin-bottom: 8px; }
-    .bio {
-      font-size: 13.5px; color: rgba(240,240,240,0.55);
-      text-align: center; max-width: 320px;
-      line-height: 1.65; margin-bottom: 40px;
+    .handle {
+      font-size: 14px; color: var(--muted);
+      margin-top: 4px; margin-bottom: 36px;
     }
 
-    /* Scroll-reveal */
+
     .reveal {
       opacity: 0; transform: translateY(22px);
       transition: opacity 0.55s cubic-bezier(.16,1,.3,1), transform 0.55s cubic-bezier(.16,1,.3,1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* Section label */
+
     .section-label {
       width: 100%; font-family: 'Syne', sans-serif;
       font-size: 10px; font-weight: 700;
@@ -112,7 +110,7 @@
       content: ''; flex: 1; height: 1px; background: var(--border);
     }
 
-    /* Link cards */
+
     .links { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
 
     .link-card {
@@ -142,7 +140,18 @@
     .link-card:hover::before { opacity: 1; }
     .link-card:active { transform: scale(0.98); }
 
-    /* Icon box with real favicon */
+
+    .resume-card {
+      background: linear-gradient(135deg, rgba(109,40,217,0.12), rgba(8,145,178,0.08));
+      border-color: rgba(167,139,250,0.25);
+    }
+    .resume-card:hover {
+      background: linear-gradient(135deg, rgba(109,40,217,0.22), rgba(8,145,178,0.15)) !important;
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 30px rgba(167,139,250,0.2), 0 8px 24px rgba(0,0,0,0.4) !important;
+    }
+
+
     .link-icon {
       width: 40px; height: 40px; border-radius: 10px;
       background: color-mix(in srgb, var(--brand) 12%, rgba(255,255,255,0.05));
@@ -154,9 +163,10 @@
     }
     .link-icon img {
       width: 22px; height: 22px;
-      object-fit: contain;
-      border-radius: 4px;
-      filter: drop-shadow(0 0 4px color-mix(in srgb, var(--brand) 40%, transparent));
+      object-fit: contain; border-radius: 4px;
+    }
+    .link-icon svg {
+      width: 20px; height: 20px;
     }
     .link-card:hover .link-icon {
       background: color-mix(in srgb, var(--brand) 22%, rgba(255,255,255,0.05));
@@ -168,21 +178,18 @@
     .link-sub { font-size: 12px; color: var(--muted); display: block; margin-top: 1px; transition: color 0.22s; }
 
     .link-arrow {
-      font-size: 13px; color: var(--muted);
+      display: flex; align-items: center;
+      color: var(--muted);
       transition: transform 0.22s ease, color 0.22s ease;
       flex-shrink: 0;
     }
     .link-card:hover .link-arrow { transform: translateX(3px); color: var(--brand); }
 
-    /* Arrow SVG */
-    .arrow-icon { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .copy-icon  { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* Email copy */
     .email-card.copied .link-sub { color: #4ade80; }
     .email-card.copied .link-arrow { color: #4ade80 !important; transform: none !important; }
 
-    /* Toast */
+
     .toast {
       position: fixed; bottom: 32px; left: 50%;
       transform: translateX(-50%) translateY(20px);
@@ -197,9 +204,10 @@
 
     .footer { font-size: 12px; color: rgba(240,240,240,0.2); margin-top: 8px; }
 
-    /* Brand accent colors */
-    .c-github    { --brand: #e0e0e0; }
+
+    .c-resume    { --brand: #a78bfa; }
     .c-linkedin  { --brand: #0a84d0; }
+    .c-github    { --brand: #e0e0e0; }
     .c-telegram  { --brand: #2aabee; }
     .c-email     { --brand: #34d399; }
     .c-instagram { --brand: #e1306c; }
@@ -237,27 +245,35 @@
 
   <div class="name reveal">Roman Suhanov</div>
   <div class="handle reveal">@rmkaaaa</div>
-  <div class="bio reveal">
-    CS Student at FAMCS, BSU · Machine Learning & Data Analysis<br>
-    Kaggle competitor · Python · Interested in ML internships
-  </div>
 
-  <!-- Professional -->
-  <div class="section-label reveal">Professional</div>
-  <div class="links">
 
-    <a class="link-card c-github reveal" href="https://github.com/rmkaaaa" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="GitHub">
+  <div class="links" style="margin-bottom: 32px; width: 100%;">
+    <a class="link-card c-resume resume-card reveal" href="./resume.pdf" target="_blank" rel="noopener" download="Roman_Suhanov_CV.pdf">
+      <div class="link-icon" style="background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.35);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <polyline points="9 15 12 18 15 15"/>
+        </svg>
       </div>
       <div class="link-info">
-        <span class="link-name">GitHub</span>
-        <span class="link-sub">@rmkaaaa</span>
+        <span class="link-name">Resume / CV</span>
+        <span class="link-sub">Download PDF</span>
       </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-arrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </div>
     </a>
+  </div>
+
+
+  <div class="section-label reveal">Professional</div>
+  <div class="links">
 
     <a class="link-card c-linkedin reveal" href="https://www.linkedin.com/in/роман-суханов-0486473ba" target="_blank" rel="noopener">
       <div class="link-icon">
@@ -267,9 +283,22 @@
         <span class="link-name">LinkedIn</span>
         <span class="link-sub">Roman Suhanov</span>
       </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-arrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+    <a class="link-card c-github reveal" href="https://github.com/rmkaaaa" target="_blank" rel="noopener">
+      <div class="link-icon">
+        <img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="GitHub">
+      </div>
+      <div class="link-info">
+        <span class="link-name">GitHub</span>
+        <span class="link-sub">@rmkaaaa</span>
+      </div>
+      <div class="link-arrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
     </a>
 
     <a class="link-card c-telegram reveal" href="https://t.me/rmkaaaaaa" target="_blank" rel="noopener">
@@ -280,9 +309,9 @@
         <span class="link-name">Telegram</span>
         <span class="link-sub">@rmkaaaaaa</span>
       </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-arrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
     </a>
 
     <div class="link-card c-email email-card reveal" id="emailCard">
@@ -293,132 +322,68 @@
         <span class="link-name">Email</span>
         <span class="link-sub" id="emailSub">romansuhanov1111@gmail.com</span>
       </div>
-      <span class="link-arrow" id="emailIcon">
-        <svg class="copy-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      </span>
+      <div class="link-arrow" id="emailIcon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </div>
     </div>
 
   </div>
-
-  <!-- Social -->
+  
   <div class="section-label reveal">Social</div>
   <div class="links">
 
     <a class="link-card c-instagram reveal" href="https://www.instagram.com/rmkaaaa" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" alt="Instagram">
-      </div>
-      <div class="link-info">
-        <span class="link-name">Instagram</span>
-        <span class="link-sub">@rmkaaaa</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" alt="Instagram"></div>
+      <div class="link-info"><span class="link-name">Instagram</span><span class="link-sub">@rmkaaaa</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-tiktok reveal" href="https://www.tiktok.com/@rmkaaaa" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=64" alt="TikTok">
-      </div>
-      <div class="link-info">
-        <span class="link-name">TikTok</span>
-        <span class="link-sub">@rmkaaaa</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=64" alt="TikTok"></div>
+      <div class="link-info"><span class="link-name">TikTok</span><span class="link-sub">@rmkaaaa</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-threads reveal" href="https://www.threads.com/@rmkaaaa" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=threads.net&sz=64" alt="Threads">
-      </div>
-      <div class="link-info">
-        <span class="link-name">Threads</span>
-        <span class="link-sub">@rmkaaaa</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=threads.net&sz=64" alt="Threads"></div>
+      <div class="link-info"><span class="link-name">Threads</span><span class="link-sub">@rmkaaaa</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-twitch reveal" href="https://www.twitch.tv/rmkaaaa1" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=twitch.tv&sz=64" alt="Twitch">
-      </div>
-      <div class="link-info">
-        <span class="link-name">Twitch</span>
-        <span class="link-sub">rmkaaaa1</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=twitch.tv&sz=64" alt="Twitch"></div>
+      <div class="link-info"><span class="link-name">Twitch</span><span class="link-sub">rmkaaaa1</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-discord reveal" href="https://discordapp.com/users/1022138928645550263" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=discord.com&sz=64" alt="Discord">
-      </div>
-      <div class="link-info">
-        <span class="link-name">Discord</span>
-        <span class="link-sub">rmkaaaa</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=discord.com&sz=64" alt="Discord"></div>
+      <div class="link-info"><span class="link-name">Discord</span><span class="link-sub">rmkaaaa</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-twitter reveal" href="https://x.com/rmkaaaa" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="X">
-      </div>
-      <div class="link-info">
-        <span class="link-name">X / Twitter</span>
-        <span class="link-sub">@rmkaaaa</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="X"></div>
+      <div class="link-info"><span class="link-name">X / Twitter</span><span class="link-sub">@rmkaaaa</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-snapchat reveal" href="https://www.snapchat.com/add/floppyyy1" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=snapchat.com&sz=64" alt="Snapchat">
-      </div>
-      <div class="link-info">
-        <span class="link-name">Snapchat</span>
-        <span class="link-sub">floppyyy1</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=snapchat.com&sz=64" alt="Snapchat"></div>
+      <div class="link-info"><span class="link-name">Snapchat</span><span class="link-sub">floppyyy1</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-steam reveal" href="https://steamcommunity.com/profiles/76561199568558852/" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=store.steampowered.com&sz=64" alt="Steam">
-      </div>
-      <div class="link-info">
-        <span class="link-name">Steam</span>
-        <span class="link-sub">rmkaaaa</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=store.steampowered.com&sz=64" alt="Steam"></div>
+      <div class="link-info"><span class="link-name">Steam</span><span class="link-sub">rmkaaaa</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a class="link-card c-blinkmap reveal" href="https://blinkmap.com/@rmkaaaa" target="_blank" rel="noopener">
-      <div class="link-icon">
-        <img src="https://www.google.com/s2/favicons?domain=blinkmap.com&sz=64" alt="Blinkmap">
-      </div>
-      <div class="link-info">
-        <span class="link-name">Blinkmap</span>
-        <span class="link-sub">@rmkaaaa</span>
-      </div>
-      <span class="link-arrow">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+      <div class="link-icon"><img src="https://www.google.com/s2/favicons?domain=blinkmap.com&sz=64" alt="Blinkmap"></div>
+      <div class="link-info"><span class="link-name">Blinkmap</span><span class="link-sub">@rmkaaaa</span></div>
+      <div class="link-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
   </div>
@@ -428,7 +393,7 @@
 </div>
 
 <script>
-  // Scroll-reveal
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -441,7 +406,6 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 
-  // Email copy
   const emailCard = document.getElementById('emailCard');
   const emailSub  = document.getElementById('emailSub');
   const emailIcon = document.getElementById('emailIcon');
@@ -453,15 +417,14 @@
     navigator.clipboard.writeText(EMAIL).then(() => {
       emailCard.classList.add('copied');
       emailSub.textContent = 'Copied!';
-      emailIcon.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
-
+      emailIcon.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
       clearTimeout(toastTimer);
       toast.classList.add('show');
       toastTimer = setTimeout(() => {
         toast.classList.remove('show');
         emailCard.classList.remove('copied');
         emailSub.textContent = EMAIL;
-        emailIcon.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+        emailIcon.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
       }, 2200);
     });
   });
