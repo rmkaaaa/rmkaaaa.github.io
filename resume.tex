@@ -1,0 +1,108 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkcolour,
+    linkcolor=linkcolour
+}
+\pagestyle{empty}
+\titleformat{\section}
+{\large\bfseries}
+{}
+{0em}
+{}
+[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+\begin{document}
+\begin{center}
+    {\LARGE \textbf{Roman Suhanov}} \\[6pt]
+    Minsk, Belarus \\[4pt]
+    \href{https://github.com/rmkaaaa}{\faGithub\ rmkaaaa}
+    \quad | \quad
+    \href{https://www.kaggle.com/rmkaaaa}{Kaggle}
+    \quad | \quad
+    \href{mailto:romansuhanov1111@gmail.com}{\faEnvelope\ romansuhanov1111@gmail.com}
+    \\[4pt]
+    \href{https://www.linkedin.com/in/роман-суханов-0486473ba/}{\faLinkedin\ LinkedIn}
+    \quad | \quad
+    \href{https://t.me/rmkaaaaaa}{\faTelegram\ @rmkaaaaaa}
+\end{center}
+\section{Summary}
+Computer Science student at Belarusian State University (FAMCS), focused on Machine Learning and data analysis. 
+Experienced in applying machine learning algorithms, performing exploratory data analysis (EDA), and building gradient boosting 
+ensembles. Actively participating in Kaggle competitions and improving model performance through experimentation. 
+Also build Telegram bots and AI automation pipelines. Interested in Machine Learning internships.
+\section{Projects}
+\textbf{F1 Pit Stop Strategy Prediction}
+\hfill
+\href{https://github.com/rmkaaaa}{GitHub}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Built a binary classification model to predict pit stop decisions during Formula 1 races.
+    \item Engineered domain-specific features (tyre degradation, race progress, pit-pressure indicators).
+    \item Trained and tuned gradient boosting models (XGBoost, LightGBM, CatBoost) with StratifiedKFold cross-validation.
+    \item Combined models via weighted blending and Logistic Regression stacking, evaluated with ROC AUC.
+    \item Performed hyperparameter optimization (grid search and Optuna).
+\end{itemize}
+\vspace{4pt}
+\textbf{Telegram Bots \& AI Automation}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Developed Telegram bots in Python (aiogram) integrating LLMs for conversational features.
+    \item Built AI automation workflows with n8n to connect LLMs, APIs, and external services.
+    \item Worked with local LLMs through Ollama for offline inference.
+    \item Containerized applications with Docker for reproducible deployment.
+\end{itemize}
+\vspace{4pt}
+\textbf{Machine Learning Coursework}
+\hfill
+\href{https://github.com/rmkaaaa/ml-course-homework}{GitHub}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Performed exploratory data analysis (EDA) and data preprocessing.
+    \item Implemented and evaluated multiple ML models: KNN, Linear Regression, Logistic Regression, Naive Bayes, Decision Trees, SVM, Random Forest, Gradient Boosting.
+    \item Compared model performance and selected appropriate approaches for different tasks.
+    \item Visualized data using Matplotlib and Seaborn.
+\end{itemize}
+\section{Kaggle Experience}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Active participant in Kaggle competitions.
+    \item Ranked 789/4890 (Top 16\%) in House Prices: Advanced Regression Techniques competition using Logistic Regression.
+    \item Ranked 885/4317 (Top 21\%) in Playground Series S6E1 using Logistic Regression.
+    \item Ranked 1054/4315 (Top 25\%) in Playground Series S6E4 using model stacking (CatBoost, LightGBM, XGBoost, SVM) to improve accuracy and model diversity.
+\end{itemize}
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2025 -- Present & 
+\textbf{Belarusian State University} \\
+& Faculty of Applied Mathematics and Computer Science \\
+& B.S. in Applied Informatics \\
+\end{tabularx}
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Programming Languages & C++, C\#, Python \\
+Machine Learning & KNN, Linear Regression, Logistic Regression, Naive Bayes, Decision Trees, SVM, Random Forest, Gradient Boosting (XGBoost, LightGBM, CatBoost) \\
+Data \& Libraries & NumPy, pandas, scikit-learn, Optuna \\
+Visualization & Matplotlib, Seaborn \\
+Tools \& Automation & Git, GitHub, Docker, n8n, Ollama, aiogram, Qt (beginner) \\
+IDEs & PyCharm, Rider, CLion, Visual Studio, VS Code \\
+Concepts & EDA, data preprocessing, model evaluation, ensemble methods (stacking, blending), cross-validation, hyperparameter tuning, feature engineering \\
+\end{tabularx}
+\section{Achievements}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Participant in regional olympiads in mathematics and physics
+\end{itemize}
+\section{Languages}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Russian & Native \\
+Belarusian & Native \\
+English & B1 (Intermediate) \\
+\end{tabularx}
+\end{document}
